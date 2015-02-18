@@ -1,3 +1,4 @@
+server\SimpleCORSFilter.class
 server\ResponseController.class
 server\Response.class
 server\Application.class

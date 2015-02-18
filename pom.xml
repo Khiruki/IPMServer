@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.springframework</groupId>
-    <artifactId>gs-rest-service</artifactId>
+    <artifactId>IPMServer</artifactId>
     <version>0.1.0</version>
 
     <parent>
@@ -21,7 +21,7 @@
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
-			<version>2.2.4</version>
+			<version>2.3.1</version>
 		</dependency>
     </dependencies>
 
