@@ -36,7 +36,7 @@ public class Request
 		boolean[] leafTranslate = new boolean[7];
 		String[] fruitData = fruit.split(",");
 		boolean[] fruitTranslate = new boolean[8];
-		
+	/*	
 		for (int i = 0; i < leafData.length; i++) 
 		{
 			try 
@@ -114,6 +114,8 @@ public class Request
 			names.add("Anthracnose");
 			names.add("Colorado Potato Beetle");
 		}
+	*/
+		
 		
 		return names;
 	}
