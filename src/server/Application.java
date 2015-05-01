@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.annotation.ComponentScan;
 
+// Main class. Starts the Spring application
 @ComponentScan
 @EnableAutoConfiguration
 public class Application 

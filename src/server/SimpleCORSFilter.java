@@ -10,6 +10,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Component;
 
+// A Simple CORS filter used to prevent cross origin sharing errors. 
 @Component
 public class SimpleCORSFilter implements Filter {
 

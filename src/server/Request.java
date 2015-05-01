@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+// The class for the request sent to the server from the app.
 public class Request 
 {
 
@@ -18,6 +19,7 @@ public class Request
 	private final String name;
 	private final Connection connection;
 	
+	// Standard request from survey
     public Request(long id, String leaf, String fruit, String bugs, String branches, String plant, String name, Connection connection) 
 	{
         this.id = id;
@@ -35,6 +37,7 @@ public class Request
         return id;
     }
 	
+	// Generate the results to be sent to the app based on the request.
 	public ArrayList<QueryResult> generateContent()
 	{
 		ArrayList<QueryResult> content = new ArrayList<QueryResult>();
@@ -50,6 +53,7 @@ public class Request
 		String[] bugData = bugs.split(",");
 		int[] bugTranslate = new int[4];		
 		
+		// Convert the string arguments from the app into usable integer arrays.
 		for (int i = 0; i < leafData.length; i++) 
 		{
 			try 
@@ -100,6 +104,7 @@ public class Request
 			{};
 		}
 		
+		// THIS SQL STATEMENT IS NOT CORRECT, IT WILL GRAB EVERYTHING. 
 		String statement = "SELECT ipmapp.pests.PestName, ipmapp.pests.text, ipmapp.pests.links " + 
 				"FROM ipmapp.pests INNER JOIN ipmapp.plantstopest ON ipmapp.pests.idpests = " +
 				"ipmapp.plantstopest.pests_idpests INNER JOIN ipmapp.plants ON ipmapp.plants.idplants " +
@@ -135,12 +140,13 @@ public class Request
 				"ipmapp.pests.moth" + " = " +  bugTranslate[2] +
 				" ORDER BY ipmapp.pests.PestName";
 		
-		
+		// Execut the SQL statement for the resulting pest list. 
 		try 
 		{
 			Statement stmt = connection.createStatement();
 			ResultSet rs = stmt.executeQuery(statement);
 			
+			// Create the resulting QueryResult objects to be returned to the app
 			while (rs.next()) {
 	            String name = rs.getString("PestName");
 	            String text = rs.getString("text");

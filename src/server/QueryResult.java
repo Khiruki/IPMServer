@@ -1,5 +1,6 @@
 package server;
 
+// The class for any result pulled from the database. 
 public class QueryResult 
 {
     private final int ID;    
@@ -14,7 +15,8 @@ public class QueryResult
 		this.Text = text;
 		this.Link = link;
     }
-
+	
+	// Used for category/subcategory retrieval, as no description text or reference links are used for those. 
     public QueryResult(int id, String name) 
 	{
         this.ID = id;
